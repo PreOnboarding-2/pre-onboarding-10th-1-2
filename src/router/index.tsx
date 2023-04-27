@@ -1,8 +1,5 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import TodoPage from "../page/TodoPage";
-import NotFoundPage from "../page/404Page";
-import SignInPage from "../page/SignInPage";
-import SignUpPage from "../page/SignUpPage";
+import { NotFoundPage, AuthTodoPage, AuthSignInPage, AuthSignUpPage } from "../pages";
 
 const router = createBrowserRouter([
   {
@@ -11,15 +8,15 @@ const router = createBrowserRouter([
   },
   {
     path: "/signin",
-    element: <SignInPage />,
+    element: <AuthSignInPage />,
   },
   {
     path: "/signUp",
-    element: <SignUpPage />,
+    element: <AuthSignUpPage />,
   },
   {
     path: "/todo",
-    element: <TodoPage />,
+    element: <AuthTodoPage />,
   },
   {
     path: "/*",
