@@ -34,7 +34,7 @@ const TodoApi = () => {
   const deleteTodo = async (todoId: number) => {
     const res = await customAxios.delete(`/todos/${todoId}`);
 
-    if (res.stausCode === 404) aler(TODO_DELETE_ERROR);
+    if (res.stausCode === 404) alert(TODO_DELETE_ERROR);
     return res;
   }
 
