@@ -1,6 +1,6 @@
 import customAxios from "../../lib/customAxios";
-import { ModifyTodoParam } from "../../types/api/todo";
-import { Todo } from "../../types/todo";
+import { ModifyTodoParam } from "./types/todo";
+// import { Todo } from "../../types/todo";
 import CONSTANT from "../constant/constant.json";
 
 const { TODO_CREATE_ERROR, TODO_GET_NOT_FOUND, TODO_GET_UNAUTHORIZED, TODO_UPDATE_ERROR, TODO_DELETE_ERROR } = CONSTANT;
