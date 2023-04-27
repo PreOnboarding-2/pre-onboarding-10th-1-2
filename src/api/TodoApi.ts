@@ -6,19 +6,19 @@ import CONSTANT from "../constant/constant.json";
 const { TODO_CREATE_ERROR, TODO_GET_NOT_FOUND, TODO_GET_UNAUTHORIZED, TODO_UPDATE_ERROR, TODO_DELETE_ERROR } = CONSTANT;
 
 const TodoApi = () => {
-  const getTodos = async (todo: string) => {
+  const getTodos = async () => {
     const res = await customAxios.get("/todos");
 
-    if (res.statusCode === 401) alert(TODO_GET_UNAUTHORIZED); // jwt unauthorized
-    if (res.stausCode === 404) alert(TODO_GET_ERROR); // page not found ex) invalid url or api error
-    return res;
+    if (res.statusCode === 401) alert(TODO_GET_UNAUTHORIZED);
+    if (res.stausCode === 404) alert(TODO_GET_NOT_FOUND);
+    return res.data;
   };
 
   const createTodo = async (todo: string) => {
     const res = await customAxios.post("/todos", { todo });
 
     if (res.stausCode === 404) alert(TODO_CREATE_ERROR);
-    return res;
+    return res.data;
   }
 
   const modifyTodo = async ({ todoId, todo, isCompleted }: ModifyTodoParam) => {
@@ -28,14 +28,14 @@ const TodoApi = () => {
     });
 
     if (res.stausCode === 404) alert(TODO_UPDATE_ERROR);
-    return res;
+    return res.data;
   }
 
   const deleteTodo = async (todoId: number) => {
     const res = await customAxios.delete(`/todos/${todoId}`);
 
     if (res.stausCode === 404) alert(TODO_DELETE_ERROR);
-    return res;
+    return res.data;
   }
 
   return {
@@ -47,4 +47,3 @@ const TodoApi = () => {
 };
 
 export default TodoApi();
-// try catch 멈추나?
