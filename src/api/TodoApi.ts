@@ -3,13 +3,13 @@ import { ModifyTodoParam } from "../../types/api/todo";
 import { Todo } from "../../types/todo";
 import CONSTANT from "../constant/constant.json";
 
-const { TODO_CREATE_ERROR, TODO_GET_ERROR, TODO_UPDATE_ERROR, TODO_DELETE_ERROR} = CONSTANT;
+const { TODO_CREATE_ERROR, TODO_GET_NOT_FOUND, TODO_GET_UNAUTHORIZED, TODO_UPDATE_ERROR, TODO_DELETE_ERROR } = CONSTANT;
 
 const TodoApi = () => {
   const getTodos = async (todo: string) => {
     const res = await customAxios.get("/todos");
-    
-    if (res.statusCode === 401) alert("허가되지 않은 접근입니다."); // jwt unauthorized
+
+    if (res.statusCode === 401) alert(TODO_GET_UNAUTHORIZED); // jwt unauthorized
     if (res.stausCode === 404) alert(TODO_GET_ERROR); // page not found ex) invalid url or api error
     return res;
   };
@@ -26,7 +26,7 @@ const TodoApi = () => {
       todo,
       isCompleted
     });
-    
+
     if (res.stausCode === 404) alert(TODO_UPDATE_ERROR);
     return res;
   }
@@ -47,4 +47,4 @@ const TodoApi = () => {
 };
 
 export default TodoApi();
-// try catch 멈추나? 
+// try catch 멈추나?
