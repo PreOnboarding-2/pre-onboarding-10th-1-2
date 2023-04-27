@@ -1,13 +1,13 @@
-
 import router from "./router";
+import styled from "styled-components";
 import { RouterProvider } from "react-router-dom";
 function App() {
-  return <Container> 
-    <RouterProvider router={router} />
-  </Container>;
+  return (
+    <Container>
+      <RouterProvider router={router} />
+    </Container>
+  );
 }
-
-import styled from "styled-components";
 
 const Container = styled.div`
   width: 100%;
