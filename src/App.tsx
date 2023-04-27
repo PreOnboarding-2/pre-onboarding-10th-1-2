@@ -1,7 +1,12 @@
+import router from "./router";
 import styled from "styled-components";
-
+import { RouterProvider } from "react-router-dom";
 function App() {
-  return <Container className="App">Welcome</Container>;
+  return (
+    <Container>
+      <RouterProvider router={router} />
+    </Container>
+  );
 }
 
 const Container = styled.div`
