@@ -1,7 +1,12 @@
 import styled from "styled-components";
+import { Outlet } from "react-router-dom";
 
 function App() {
-  return <Container className="App">Welcome</Container>;
+  return (
+    <Container className="App">
+      <Outlet />
+    </Container>
+  );
 }
 
 const Container = styled.div`
