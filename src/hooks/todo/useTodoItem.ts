@@ -26,6 +26,7 @@ const useTodoItem = ({ item, modifyTodo, deleteTodo }: useTodoItemProps) => {
   const handleModifyTodo = async () => {
     try {
       if (modifyTodoInput.length > 255) {
+        // eslint-disable-next-line no-throw-literal
         throw "Content too long";
       }
       if (modifyTodoInput.trim() !== "") {

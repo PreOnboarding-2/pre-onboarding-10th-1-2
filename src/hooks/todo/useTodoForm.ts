@@ -19,6 +19,7 @@ export const useTodoForm = ({ createTodo }: useTodoFormProps) => {
     try {
       event.preventDefault();
       if (newTodo.length > 255) {
+        // eslint-disable-next-line no-throw-literal
         throw "Content too long";
       }
       if (newTodo.trim() !== "") {
