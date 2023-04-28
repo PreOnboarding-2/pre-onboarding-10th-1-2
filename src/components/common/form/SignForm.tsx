@@ -1,17 +1,8 @@
-import { FormEvent, ChangeEvent } from "react";
-import { FormData } from "../../../types/form/formData.type";
+import { SignFormProps } from "../../../types/form/formData.type";
 import Input from "../input/Input";
 import { Container } from "./signForm.style";
 import { useForm } from "../../../hooks/form/useForm";
 import Button from "../button/Button";
-
-interface SignFormProps {
-  value: FormData;
-  title: string;
-  handleSubmit: (event: FormEvent<HTMLFormElement>) => void;
-  handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
-  isValid: boolean;
-}
 
 const SignForm = ({ value, title, handleSubmit, handleChange, isValid }: SignFormProps) => {
   const signButtonTestId: { [key: string]: string } = {

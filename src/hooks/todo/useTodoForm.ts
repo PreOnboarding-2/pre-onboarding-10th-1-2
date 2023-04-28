@@ -1,10 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import TodoApi from "../../api/TodoApi";
-import { Todo } from "../../types/todo";
-
-export interface useTodoFormProps {
-  createTodo: (newTodo: Todo) => void;
-}
+import { useTodoFormProps } from "../../types/todo";
 
 export const useTodoForm = ({ createTodo }: useTodoFormProps) => {
   const [newTodo, setNewTodo] = useState("");

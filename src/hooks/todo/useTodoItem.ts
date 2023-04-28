@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 import TodoApi from "../../api/TodoApi";
-import { Todo } from "../../types/todo";
-
-type useTodoItemProps = {
-  item: Todo;
-  modifyTodo: (modifiedTodo: Todo) => void;
-  deleteTodo: (id: number) => void;
-};
+import { Todo, useTodoItemProps } from "../../types/todo";
 
 const useTodoItem = ({ item, modifyTodo, deleteTodo }: useTodoItemProps) => {
   const [isModifyMode, setIsModifyMode] = useState(false);
