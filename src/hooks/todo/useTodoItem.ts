@@ -31,6 +31,9 @@ const useTodoItem = ({ item, modifyTodo, deleteTodo }: useTodoItemProps) => {
 
   const handleModifyTodo = async () => {
     try {
+      if (modifyTodoInput.length > 255) {
+        throw "Content too long";
+      }
       if (modifyTodoInput.trim() !== "") {
         const modifiedTodo = await TodoApi.modifyTodo({
           todoId: item.id,
@@ -41,7 +44,7 @@ const useTodoItem = ({ item, modifyTodo, deleteTodo }: useTodoItemProps) => {
         setIsModifyMode(false);
       }
     } catch (error) {
-      alert("todo수정을 실패하였습니다.");
+      alert("todo수정을 실패하였습니다.:" + error);
     }
   };
 

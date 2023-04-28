@@ -22,13 +22,16 @@ export const useTodoForm = ({ createTodo }: useTodoFormProps) => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     try {
       event.preventDefault();
+      if (newTodo.length > 255) {
+        throw "Content too long";
+      }
       if (newTodo.trim() !== "") {
         const data = await TodoApi.createTodo(newTodo);
         createTodo(data);
       }
       setNewTodo("");
     } catch (error) {
-      alert("todo 추가를 실패하였습니다.");
+      alert("todo 추가를 실패하였습니다." + error);
     }
   };
 
