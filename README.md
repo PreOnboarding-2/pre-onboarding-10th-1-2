@@ -8,6 +8,10 @@
 동료학습을 통해 Best Pratice을 만들어 제출.
 ```
 
+## 배포
+
+[https://pre-onboarding-10th-1-2.vercel.app](https://pre-onboarding-10th-1-2.vercel.app)
+
 ## 사용 라이브러리
 
 - React Router
@@ -191,7 +195,7 @@ chore : 빌드 업무 수정, 패키지 매니저 수정, 그 외 자잘한 수�
 - 리다이렉트: 정우재, 최현민
 
 - README: 황예진, ~
-- 배포: ~
+- 배포: 이승재
 
 ## 실행 방법
 
