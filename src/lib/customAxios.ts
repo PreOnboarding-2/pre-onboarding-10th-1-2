@@ -1,10 +1,9 @@
 import axios from "axios";
-import constant from "../constant/constant.json";
-import { TOKEN_KEY } from "../constant/constant";
+import { TOKEN_KEY, SERVER } from "../constant/constant";
 import { getToken, removeToken } from "../utils/token";
 
 const customAxios = axios.create({
-  baseURL: constant.SERVER,
+  baseURL: SERVER,
 });
 
 customAxios.interceptors.request.use(

@@ -15,4 +15,4 @@ const AuthApi = () => {
   return { signUp, signIn };
 };
 
-export default AuthApi;
+export default AuthApi();
