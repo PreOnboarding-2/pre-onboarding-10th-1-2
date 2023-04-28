@@ -6,9 +6,12 @@ import Input from "../../common/input/Input";
 
 interface TodoItemProps {
   item: Todo;
+  modifyTodo: (item: Todo) => void;
+  deleteTodo: (id: number) => void;
 }
 
-const TodoItem = ({ item }: TodoItemProps) => {
+const TodoItem = (props: TodoItemProps) => {
+  const { item } = props;
   const {
     isModifyMode,
     modifyTodoInput,
@@ -18,7 +21,7 @@ const TodoItem = ({ item }: TodoItemProps) => {
     handleDeleteTodo,
     handleModifyTodo,
     handleOnModifyMode,
-  } = useTodoItem(item);
+  } = useTodoItem(props);
   return (
     <>
       <Item isCompleted={item.isCompleted}>

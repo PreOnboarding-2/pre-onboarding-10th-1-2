@@ -1,12 +1,19 @@
-import useTodoList from "../../hooks/todo/useTodoList";
+import { Todo } from "../../types/todo";
 import TodoItem from "./item/TodoItem";
 
-const TodoList = () => {
-  const { todos } = useTodoList();
+interface Props {
+  todos: Todo[];
+  modifyTodo: (item: Todo) => void;
+  deleteTodo: (id: number) => void;
+}
+
+const TodoList = (props: Props) => {
+  const { todos, modifyTodo, deleteTodo } = props;
+
   return (
     <ul>
       {todos.map(todo => (
-        <TodoItem key={todo.id} item={todo} />
+        <TodoItem key={todo.id} item={todo} modifyTodo={modifyTodo} deleteTodo={deleteTodo} />
       ))}
     </ul>
   );

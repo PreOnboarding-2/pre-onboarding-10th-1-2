@@ -9,23 +9,23 @@ const AuthApi = () => {
     const result = await customAxios.post("/auth/signin", formData);
     if (result.status === 201) {
       alert(SIGNIN_SUCCESS);
-      return result.data;
     } else {
       alert(SIGNIN_ERROR);
     }
-  }
+    return result.data;
+  };
 
   const signUp = async (formData: SignupParam): Promise<void> => {
     const result = await customAxios.post("/auth/signup", formData);
     if (result.status === 200) {
       alert(SIGNUP_SUCCESS);
-      return result.data;
     } else {
       alert(SIGNUP_ERROR);
     }
-  }
+    return result.data;
+  };
 
   return { signUp, signIn };
-}
+};
 
 export default AuthApi;
