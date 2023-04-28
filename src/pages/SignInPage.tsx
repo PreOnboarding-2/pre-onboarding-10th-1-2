@@ -14,7 +14,7 @@ const SignInPage = () => {
         handleChange={handleChange}
         handleSubmit={e => handleSubmit(e, "SIGNIN")}
       />
-      <Link to={"/signin"}>로그인 하러 가기</Link>
+      <Link to={"/signup"}>회원가입 하기</Link>
     </div>
   );
 };
