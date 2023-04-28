@@ -1,6 +1,8 @@
 import { useState, useEffect, useCallback } from "react";
 import { Todo } from "../../types/todo";
 import TodoApi from "../../api/TodoApi";
+import { getToken } from "../../utils/token";
+import { TOKEN_KEY } from "../../constant/constant";
 
 const useTodoList = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
@@ -28,6 +30,9 @@ const useTodoList = () => {
   }, [setTodos]);
 
   useEffect(() => {
+    if (getToken(TOKEN_KEY) === null) {
+      return;
+    }
     getTodos();
   }, []);
 
