@@ -4,7 +4,6 @@ export const useForm = () => {
   const emailRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    
     const debounce = (func: any, delay: number) => {
       let timeoutId: ReturnType<typeof setTimeout>;
       return (...args: any[]) => {

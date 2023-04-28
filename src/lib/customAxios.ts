@@ -8,7 +8,7 @@ const customAxios = axios.create({
 
 customAxios.interceptors.request.use(
   config => {
-    const token = getToken(TOKEN_KEY)
+    const token = getToken(TOKEN_KEY);
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
