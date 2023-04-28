@@ -1,10 +1,10 @@
+import router from "./router";
 import styled from "styled-components";
-import { Outlet } from "react-router-dom";
-
+import { RouterProvider } from "react-router-dom";
 function App() {
   return (
-    <Container className="App">
-      <Outlet />
+    <Container>
+      <RouterProvider router={router} />
     </Container>
   );
 }

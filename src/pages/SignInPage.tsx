@@ -1,8 +1,7 @@
 import React from "react";
-import * as St from "./PageStyles";
 
 const SignInPage = () => {
-  return <St.Container>SignInPage</St.Container>;
+  return <div>SignInPage</div>;
 };
 
 export default SignInPage;
