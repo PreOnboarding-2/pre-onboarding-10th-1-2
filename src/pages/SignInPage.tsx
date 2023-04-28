@@ -12,7 +12,7 @@ const SignInPage = () => {
         isValid={isValid}
         title={"로그인"}
         handleChange={handleChange}
-        handleSubmit={handleSubmit}
+        handleSubmit={e => handleSubmit(e, "SIGNIN")}
       />
       <Link to={"/signin"}>로그인 하러 가기</Link>
     </div>
