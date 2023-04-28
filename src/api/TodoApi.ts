@@ -4,13 +4,11 @@ import { ModifyTodoParam } from "../types/api/todo";
 const TodoApi = () => {
   const getTodos = async () => {
     const res = await customAxios.get("/todos");
-
     return res.data;
   };
 
   const createTodo = async (todo: string) => {
     const res = await customAxios.post("/todos", { todo });
-
     return res.data;
   };
 
@@ -19,13 +17,11 @@ const TodoApi = () => {
       todo,
       isCompleted,
     });
-
     return res.data;
   };
 
   const deleteTodo = async (todoId: number) => {
     const res = await customAxios.delete(`/todos/${todoId}`);
-
     return res.data;
   };
 
