@@ -1,13 +1,7 @@
-import { Todo } from "../../types/todo";
+import { TodoListProps } from "../../types/todo";
 import TodoItem from "./item/TodoItem";
 
-interface Props {
-  todos: Todo[];
-  modifyTodo: (item: Todo) => void;
-  deleteTodo: (id: number) => void;
-}
-
-const TodoList = (props: Props) => {
+const TodoList = (props: TodoListProps) => {
   const { todos, modifyTodo, deleteTodo } = props;
 
   return (

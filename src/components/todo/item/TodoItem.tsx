@@ -1,14 +1,8 @@
 import Button from "../../common/button/Button";
-import { Todo } from "../../../types/todo";
+import { TodoItemProps } from "../../../types/todo";
 import Item from "./todoItem.style";
 import useTodoItem from "../../../hooks/todo/useTodoItem";
 import Input from "../../common/input/Input";
-
-interface TodoItemProps {
-  item: Todo;
-  modifyTodo: (item: Todo) => void;
-  deleteTodo: (id: number) => void;
-}
 
 const TodoItem = (props: TodoItemProps) => {
   const { item } = props;

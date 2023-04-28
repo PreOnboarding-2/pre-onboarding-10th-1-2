@@ -1,5 +1,5 @@
 import customAxios from "../lib/customAxios";
-import { ModifyTodoParam } from "./types/todo";
+import { ModifyTodoParam } from "../types/api/todo";
 // import { Todo } from "../../types/todo";
 import CONSTANT from "../constant/constant.json";
 

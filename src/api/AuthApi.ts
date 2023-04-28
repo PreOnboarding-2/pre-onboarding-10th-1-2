@@ -1,5 +1,5 @@
 import customAxios from "../lib/customAxios";
-import { SigninResponse, SigninParam, SignupParam } from "./types/auth/index";
+import { SigninResponse, SigninParam, SignupParam } from "../types/api/auth";
 import CONSTANT from "../constant/constant.json";
 
 const { SIGNUP_SUCCESS, SIGNUP_ERROR, SIGNIN_ERROR, SIGNIN_SUCCESS } = CONSTANT;

@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react"
+import { useRef, useEffect } from "react";
 
 export const useForm = () => {
   const emailRef = useRef<HTMLInputElement>(null);
@@ -38,6 +38,6 @@ export const useForm = () => {
   }, []);
 
   return {
-    emailRef
-  }
-}
+    emailRef,
+  };
+};

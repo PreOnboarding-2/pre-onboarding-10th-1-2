@@ -2,13 +2,9 @@ import StyledForm from "./todoForm.style";
 import Input from "../../common/input/Input";
 import { useTodoForm } from "../../../hooks/todo/useTodoForm";
 import Button from "../../common/button/Button";
-import { Todo } from "../../../types/todo";
+import { TodoFormProps } from "../../../types/todo";
 
-interface Props {
-  createTodo: (item: Todo) => void;
-}
-
-const TodoForm = (props: Props) => {
+const TodoForm = (props: TodoFormProps) => {
   const { newTodo, newTodoInputRef, handleSubmit, handleChange } = useTodoForm(props);
   return (
     <StyledForm onSubmit={handleSubmit}>
