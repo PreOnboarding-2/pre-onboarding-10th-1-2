@@ -9,15 +9,15 @@ const TodoApi = () => {
   const getTodos = async () => {
     const res = await customAxios.get("/todos");
 
-    if (res.statusCode === 401) alert(TODO_GET_UNAUTHORIZED);
-    if (res.stausCode === 404) alert(TODO_GET_NOT_FOUND);
+    if (res.status === 401) alert(TODO_GET_UNAUTHORIZED);
+    if (res.staus === 404) alert(TODO_GET_NOT_FOUND);
     return res.data;
   };
 
   const createTodo = async (todo: string) => {
     const res = await customAxios.post("/todos", { todo });
 
-    if (res.stausCode === 404) alert(TODO_CREATE_ERROR);
+    if (res.staus === 404) alert(TODO_CREATE_ERROR);
     return res.data;
   }
 
@@ -27,14 +27,14 @@ const TodoApi = () => {
       isCompleted
     });
 
-    if (res.stausCode === 404) alert(TODO_UPDATE_ERROR);
+    if (res.staus === 404) alert(TODO_UPDATE_ERROR);
     return res.data;
   }
 
   const deleteTodo = async (todoId: number) => {
     const res = await customAxios.delete(`/todos/${todoId}`);
 
-    if (res.stausCode === 404) alert(TODO_DELETE_ERROR);
+    if (res.staus === 404) alert(TODO_DELETE_ERROR);
     return res.data;
   }
 
