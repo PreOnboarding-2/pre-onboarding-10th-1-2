@@ -9,7 +9,6 @@ import { setToken } from "../../utils/token";
 import { SigninResponse } from "../../types/api/auth";
 
 const useAuth = () => {
-  const authApi = AuthApi();
   const [userInfo, setUserInfo] = useState<FormData>({
     email: "",
     password: "",
@@ -24,13 +23,14 @@ const useAuth = () => {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>, formType: FormType) => {
     event.preventDefault();
-    const submitFunction = formType === "SIGNIN" ? authApi.signIn : authApi.signUp;
+    const submitFunction = formType === "SIGNIN" ? AuthApi.signIn : AuthApi.signUp;
     const successMessage = formType === "SIGNIN" ? "로그인 성공" : "회원가입 성공";
     const redirectPath = formType === "SIGNIN" ? "/todo" : "/signin";
     try {
-      const access_token = await submitFunction(userInfo);
+      const result = await submitFunction(userInfo);
       if (formType === "SIGNIN") {
-        setToken("token", access_token as SigninResponse);
+        const signinResponse = result as SigninResponse;
+        setToken("token", signinResponse.access_token);
       }
       window.alert(successMessage);
       navigate(redirectPath);
