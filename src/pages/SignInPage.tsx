@@ -1,18 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SignForm from "../components/common/form/SignForm";
-import useSignIn from "../hooks/auth/useSignIn";
+import useAuth from "../hooks/auth/useAuth";
 
 const SignInPage = () => {
-  const { isValid, formData, handleSubmit, handleChange } = useSignIn();
+  const { isValid, userInfo, handleSubmit, handleChange } = useAuth();
   return (
     <div>
       <SignForm
-        value={formData}
+        value={userInfo}
         isValid={isValid}
         title={"로그인"}
         handleChange={handleChange}
-        handleSubmit={handleSubmit}
+        handleSubmit={e => handleSubmit(e, "SIGNIN")}
       />
       <Link to={"/signup"}>회원가입 하기</Link>
     </div>

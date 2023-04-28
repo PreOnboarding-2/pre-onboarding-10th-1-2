@@ -12,3 +12,5 @@ export interface SignFormProps {
   handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
   isValid: boolean;
 }
+
+export type FormType = "SIGNIN" | "SIGNUP";
